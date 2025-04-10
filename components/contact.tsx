@@ -44,7 +44,7 @@ export function Contact() {
           title: formData.subject,
           name: formData.name,
           message: formData.message,
-          email: "pragyeshchauhan046@gmail.com",
+          email: formData.email,
           });
 
           console.log("Email sent:", systemMail.text);

@@ -34,11 +34,21 @@ export function Contact() {
   
     try {
       const now = new Date();
+      const timestr = now.toLocaleString('en-GB', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+      });
       const result = await emailjs.send("service_30azgx4","template_mv1s8mp",{
         name: formData.name,
         email: formData.email,
+        subject: formData.subject,
         title: formData.message,
-        time : now.toLocaleString,
+        time : timestr,
         }
         ,"itJU_Zxy4NYPaqRPm");
       try{
@@ -47,14 +57,14 @@ export function Contact() {
           name: formData.name,
           subject: formData.subject,
           email: formData.email,
-          time : now.toLocaleString,
-          });
+          time : timestr,
+          },"itJU_Zxy4NYPaqRPm");
 
           console.log("Email sent:", systemMail.text);
         }catch (error) {
           console.error("EmailJS error: systemMail ", error);
         }
-      console.log("Email sent:", result.text);
+      // console.log("Email sent:", result.text);
       setSubmitSuccess(true);
       setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {

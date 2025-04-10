@@ -13,7 +13,8 @@ export function Projects() {
     {
       title: "FieldEquip - Field Service",
       description:
-        "A full-featured field service management platform that streamlines operations, connects field teams with the back office, and enables real-time, data-driven service delivery.",
+        "A full-featured field service management platform that streamlines operations,"+ 
+        "connects field teams with the back office, and enables real-time, data-driven service delivery.",
       image: "/Oilfield-Services-Management-Software.png?height=400&width=600",
       technologies: ["AWS Rekognition", "SpringBoot", "MongoDB", "Java"],
       liveUrl: "https://www.fieldequip.com/field-service-management-software",
@@ -21,7 +22,7 @@ export function Projects() {
     },
     {
       title: "FieldEquip - Field Ticketing",
-      description: "A oil and gas field service management platform that connects operators, suppliers, assets, and field workers in real-time to optimize operations, improve transparency, and drive smarter business decisions.",
+      description: "A oil and gas field service management platform that connects operators, suppliers, and listing of all logistic crud oil transpotation  in real-time to optimize operations, improve transparency, and drive smarter business decisions.",
       image: "/Digital-Field-Ticketing.png?height=400&width=600",
       technologies: ["AWS S3", "SpringBoot", "MongoDB", "Java" , "Rest APIs" ],
       liveUrl: "https://www.fieldequip.com/field-ticketing-management/",
@@ -30,9 +31,7 @@ export function Projects() {
     {
       title: "FieldEquip - Asset Management",
       description:
-        "An comprehensive service management platform that connects assets and field workers to the back office for streamlined and efficient operations." 
-        +"Through automation, intelligent scheduling, and seamless integrations with any system"
-        +", FieldEquip enables businesses to enhance visibility, boost productivity, and deliver reliable, proactive service",
+        "A platform that connects assets and field workers to the back office—streamlining service, installation, and asset pickup with automation, smart scheduling, and system integrations to boost efficiency and service delivery",
       image: "/Asset-or-Equipment-Service-Management.png?height=400&width=600",
       technologies: ["SpringBoot", "MongoDB", "Java" , "Spring security" ,"JWT"],
       liveUrl: "https://www.fieldequip.com/asset-service-management/",
@@ -40,10 +39,7 @@ export function Projects() {
     },
     {
       title: "FieldEquip -Time Management",
-      description: "FieldEquip simplifies time tracking and job costing with a unified time entry system that seamlessly manages labor"+ 
-      "hours across field, plant, and shop operations. By consolidating clock-ins, job activity tracking, and timesheet approvals into one "+
-      "platform, FieldEquip reduces administrative overhead, ensures accurate payroll processing, and streamlines labor verification for invoicing—all "+
-      "in one efficient workflow",
+      description: "FieldEquip unifies time tracking and job costing across operations, simplifying payroll, approvals, and invoicing in one streamlined workflow.",
       image: "/Biometric-Scanning-in-the-Plant.png?height=800&width=1200",
       technologies: ["AWS Rekognition", "Java", "Spring-Boot", "MongoDB" ,"Rest API"],
       liveUrl: "https://www.fieldequip.com/field-service-time-tracking-software/",
@@ -51,7 +47,7 @@ export function Projects() {
     },
     {
       title: "FieldEquip - Integrations",
-      description: "This architectural framework of FieldEquip provides a powerful and flexible API interface that integrates seamlessly with third-party applications.",
+      description: "FieldEquip's architectural framework enables seamless and flexible third-party API integration, allowing efficient processing of customer data from external applications.",
       image: "/thridPartyIntregation.png?height=400&width=600",
       technologies: ["AWS S3", "SpringBoot", "MongoDB", "Java" , "Rest APIs" , "SQL" , "MySQL" ],
       liveUrl: "#",
@@ -59,8 +55,7 @@ export function Projects() {
     },
     {
       title: "CADMaster Website",
-      description: "A responsive website to showcase CadMaster, can one-stop destination for expert CAD drafting, 3D modeling, and architectural design."+
-       "This website showcases professional design services with a clean, responsive interface, ideal for architects, engineers, and designers.",
+      description: "A responsive website for CadMaster—your one-stop destination for expert CAD drafting, 3D modeling, and architectural design services.",
       image: "/cadMaster.png?height=400&width=600",
       technologies: ["React.js", "Tailwind CSS", "HTML" , "Java Script" , "TypeScript"],
       liveUrl: "https://cadmaster.netlify.app/",
@@ -77,10 +72,10 @@ export function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">My Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Projects</h2>
           <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
-            Here are some of my recent projects. Each one was built to solve a specific problem or explore new
-            technologies.
+          Here are some recent projects I worked on, both personally and with the companies 
+          I’ve been part of, built to solve real-world problems and explore new technologies.
           </p>
         </motion.div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -27,8 +27,8 @@ export function Footer() {
           >
             <h3 className="font-bold text-xl mb-2">DevShowcase</h3>
             <p className="text-muted-foreground text-sm max-w-xs">
-            Crafting exceptional digital experiences through powerful backend systems and engaging, user-friendly interfaces.
-            </p>
+            Crafting seamless digital experiences with robust backend systems and intuitive user interfaces.
+          </p>
           </motion.div>
 
           <motion.div

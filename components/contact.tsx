@@ -33,18 +33,21 @@ export function Contact() {
     setIsSubmitting(true);
   
     try {
-
+      const now = new Date();
       const result = await emailjs.send("service_30azgx4","template_mv1s8mp",{
         name: formData.name,
         email: formData.email,
+        title: formData.message,
+        time : now.toLocaleString,
         }
         ,"itJU_Zxy4NYPaqRPm");
       try{
         const systemMail =  await emailjs.send("service_30azgx4","template_rnu4xck",{
-          title: formData.subject,
+          title: formData.message,
           name: formData.name,
-          message: formData.message,
+          subject: formData.subject,
           email: formData.email,
+          time : now.toLocaleString,
           });
 
           console.log("Email sent:", systemMail.text);

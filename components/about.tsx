@@ -16,6 +16,14 @@ const Tilt = dynamic(() => import("react-parallax-tilt"), {
   ),
 });
 
+const calculateExperience = (startDateStr: string): string => {
+  const start = new Date(startDateStr);
+  const now = new Date();
+  const years = (now.getTime() - start.getTime()) / (1000 * 60 * 60 * 24 * 365.25);
+  return `${years.toFixed(1)}+`;
+  console.log("coming date"+ startDateStr)
+};
+
 export function About() {
   const shouldReduceMotion = useReducedMotion();
   const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -35,6 +43,11 @@ export function About() {
     }),
     [shouldReduceMotion]
   );
+
+const stats = useMemo(() => [
+  { value: calculateExperience("2020-01-01"), label: "Years Experience" },
+  { value: "9+", label: "Projects Completed" },
+], []);
 
   const childVariants = useMemo(
     () => ({
@@ -234,7 +247,7 @@ export function About() {
                   className="text-gray-600 dark:text-gray-300 mb-4 font-['Inter'] text-sm sm:text-base leading-relaxed"
                   aria-describedby="about-description"
                 >
-                  I'm Pragyesh, a Software Engineer at Bursys with over 2.4 years of
+                  I'm Pragyesh Chauhan, a Software Engineer at Bursys with over 2.8 years of
                   experience. I specialize in backend development, crafting scalable
                   applications that deliver measurable business impact.
                 </p>
@@ -247,10 +260,7 @@ export function About() {
                   solutions.
                 </p>
                 <div className="grid stat-grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                  {[
-                    { value: "2.4+", label: "Years Experience" },
-                    { value: "8+", label: "Projects Completed" },
-                  ].map((stat, index) => (
+                  {stats.map((stat, index) => (
                     <motion.div
                       key={index}
                       variants={childVariants}
@@ -304,7 +314,7 @@ export function About() {
             name: "Pragyesh Chauhan",
             jobTitle: "Software Engineer",
             description:
-              "Software Engineer at Bursys with over 2.4 years of experience specializing in backend development and full-stack technologies.",
+              "Software Engineer at Bursys with over 2.8 years of experience specializing in backend development and full-stack technologies.",
             image: "https://your-portfolio.com/profile.jpg",
             worksFor: {
               "@type": "Organization",

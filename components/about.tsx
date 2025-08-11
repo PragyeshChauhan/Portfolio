@@ -21,7 +21,7 @@ const calculateExperience = (startDateStr: string): string => {
   const now = new Date();
   const years = (now.getTime() - start.getTime()) / (1000 * 60 * 60 * 24 * 365.25);
   return `${years.toFixed(1)}+`;
-  console.log("coming date"+ startDateStr)
+  console.log("coming date" + startDateStr)
 };
 
 export function About() {
@@ -43,11 +43,11 @@ export function About() {
     }),
     [shouldReduceMotion]
   );
-
-const stats = useMemo(() => [
-  { value: calculateExperience("2020-01-01"), label: "Years Experience" },
-  { value: "9+", label: "Projects Completed" },
-], []);
+  const experience = calculateExperience("2023-01-01")
+  const stats = useMemo(() => [
+    { value: experience, label: "Years Experience" },
+    { value: "9+", label: "Projects Completed" },
+  ], []);
 
   const childVariants = useMemo(
     () => ({
@@ -247,7 +247,7 @@ const stats = useMemo(() => [
                   className="text-gray-600 dark:text-gray-300 mb-4 font-['Inter'] text-sm sm:text-base leading-relaxed"
                   aria-describedby="about-description"
                 >
-                  I'm Pragyesh Chauhan, a Software Engineer at Bursys with over 2.8 years of
+                  I'm Pragyesh Chauhan, a Software Engineer at Bursys with over {experience} years of
                   experience. I specialize in backend development, crafting scalable
                   applications that deliver measurable business impact.
                 </p>
@@ -314,22 +314,36 @@ const stats = useMemo(() => [
             name: "Pragyesh Chauhan",
             jobTitle: "Software Engineer",
             description:
-              "Software Engineer at Bursys with over 2.8 years of experience specializing in backend development and full-stack technologies.",
-            image: "https://your-portfolio.com/profile.jpg",
+              "Experienced Software Engineer specializing in backend and full-stack development using Node.js, React.js, and JavaScript. Currently working at Bursys with over {experience} years of experience building scalable web applications.",
+            image: "public/profile_pic.jpg",
+            url: "https://iampragyesh.netlify.app/",
+            sameAs: [
+              "https://www.linkedin.com/in/pragyesh-chauhan01/",
+              "https://github.com/PragyeshChauhan",
+            ],
             worksFor: {
               "@type": "Organization",
               name: "Bursys",
+              url: "https://www.bursys.com"
+            },
+            alumniOf: {
+              "@type": "CollegeOrUniversity",
+              name:"AKGEC Ghaziabad"
             },
             knowsAbout: [
               "Backend Development",
               "JavaScript",
-              "React.js",
-              "Node.js",
-              "Full-Stack Development",
-            ],
-          }),
+              "Spring Boot",
+              "Kafka",
+              "Redis",
+              "MongoDB",
+              "REST APIs",
+              "PostgreSQL"
+            ]
+          })
         }}
       />
+
     </section>
   );
 }

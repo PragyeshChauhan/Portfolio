@@ -30,86 +30,112 @@ interface SkillCategory {
 export function Skills() {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const skillCategories: SkillCategory[] = [
-    {
-      title: "Frontend Development",
-      icon: <Layout className="h-8 w-8 sm:h-10 sm:w-10 text-gray-800 dark:text-cyan-400" />,
-      skills: [
-        { name: "React.js", proficiency: 90, description: "Building dynamic UIs with React" },
-        { name: "JavaScript", proficiency: 85, description: "Core scripting for web apps" },
-        { name: "TypeScript", proficiency: 80, description: "Typed JavaScript for scalability" },
-        { name: "HTML5", proficiency: 95, description: "Semantic markup for web" },
-        { name: "CSS3", proficiency: 90, description: "Modern styling and animations" },
-        { name: "Tailwind CSS", proficiency: 85, description: "Utility-first CSS framework" },
-      ],
-    },
-    {
-      title: "Backend Development",
-      icon: <Server className="h-8 w-8 sm:h-10 sm:w-10 text-gray-800 dark:text-cyan-400" />,
-      skills: [
-        { name: "Java", proficiency: 90, description: "Robust backend development" },
-        { name: "Spring-Boot", proficiency: 85, description: "Microservices with Spring" },
-        { name: "RESTful APIs", proficiency: 88, description: "API design and integration" },
-        {
-          name: "Microservices Architecture",
-          proficiency: 80,
-          description: "Scalable system design",
-        },
-        { name: "Python", proficiency: 75, description: "Versatile scripting and backend" },
-        { name: "Django", proficiency: 70, description: "Python web framework" },
-        { name: "SQL", proficiency: 85, description: "Database querying and design" },
-      ],
-    },
-    {
-      title: "Database",
-      icon: <Database className="h-8 w-8 sm:h-10 sm:w-10 text-gray-800 dark:text-cyan-400" />,
-      skills: [
-        { name: "MongoDB", proficiency: 85, description: "NoSQL database management" },
-        { name: "PostgreSQL", proficiency: 80, description: "Relational database expertise" },
-        { name: "MySQL", proficiency: 82, description: "Widely-used SQL database" },
-      ],
-    },
-    {
-      title: "DevOps & Tools",
-      icon: <Code className="h-8 w-8 sm:h-10 sm:w-10 text-gray-800 dark:text-cyan-400" />,
-      skills: [
-        { name: "Git", proficiency: 90, description: "Version control mastery" },
-        { name: "GitHub", proficiency: 88, description: "Collaboration and CI/CD" },
-        { name: "Docker", proficiency: 80, description: "Containerization for apps" },
-        { name: "CI/CD Pipelines", proficiency: 78, description: "Automated deployments" },
-        { name: "AWS", proficiency: 75, description: "Cloud infrastructure" },
-        { name: "Netlify", proficiency: 80, description: "Static site deployment" },
-      ],
-    },
-    {
-      title: "Other",
-      icon: <Globe className="h-8 w-8 sm:h-10 sm:w-10 text-gray-800 dark:text-cyan-400" />,
-      skills: [
-        {
-          name: "External API Integration",
-          proficiency: 85,
-          description: "Seamless third-party APIs",
-        },
-        { name: "Agile Methodology", proficiency: 90, description: "Iterative development" },
-        {
-          name: "API Testing & Documentation (Swagger)",
-          proficiency: 80,
-          description: "API validation",
-        },
-        { name: "System Design", proficiency: 78, description: "Scalable architectures" },
-        {
-          name: "Performance Optimization",
-          proficiency: 82,
-          description: "App efficiency",
-        },
-        {
-          name: "Code Review & Collaboration",
-          proficiency: 88,
-          description: "Team workflows",
-        },
-      ],
-    },
-  ];
+const skillCategories: SkillCategory[] = [
+  // ---------------- Programming Languages ----------------
+  {
+    title: "Programming Languages",
+    icon: <Layout className="h-8 w-8 sm:h-10 sm:w-10 text-gray-800 dark:text-cyan-400" />,
+    skills: [
+      { name: "Java", proficiency: 92, description: "Primary backend development language" },
+      { name: "Python", proficiency: 55, description: "Learning for backend & GenAI development" },
+      { name: "SQL", proficiency: 85, description: "Database querying & schema design" },
+      { name: "JavaScript", proficiency: 75, description: "Web scripting & application logic" },
+    ],
+  },
+
+  // ---------------- Java Ecosystem ----------------
+  {
+    title: "Java Ecosystem",
+    icon: <Server className="h-8 w-8 sm:h-10 sm:w-10 text-gray-800 dark:text-cyan-400" />,
+    skills: [
+      { name: "Spring Boot", proficiency: 92, description: "Production-grade microservices" },
+      { name: "Spring MVC", proficiency: 88, description: "REST controllers & web layer" },
+      { name: "Spring Security", proficiency: 85, description: "Authentication, JWT & OAuth2" },
+      { name: "Hibernate", proficiency: 82, description: "ORM and database operations" },
+      { name: "JPA", proficiency: 83, description: "Entity mapping & repository layer" },
+      { name: "J2EE", proficiency: 78, description: "Enterprise Java application standards" },
+      { name: "RESTful APIs", proficiency: 90, description: "API design, versioning & integration" },
+      { name: "SOAP / XML", proficiency: 75, description: "Legacy enterprise services" },
+    ],
+  },
+
+  // ---------------- Microservices & Architecture ----------------
+  {
+    title: "Microservices & Architecture",
+    icon: <Code className="h-8 w-8 sm:h-10 sm:w-10 text-gray-800 dark:text-cyan-400" />,
+    skills: [
+      { name: "Microservices Architecture", proficiency: 88, description: "Distributed systems & scalability" },
+      { name: "Kafka", proficiency: 75, description: "Event streaming & async messaging" },
+      { name: "API Gateway", proficiency: 80, description: "Routing, filtering & authentication" },
+      { name: "Design Patterns", proficiency: 85, description: "Reusable system design solutions" },
+      { name: "Multithreading", proficiency: 80, description: "Concurrent programming" },
+      { name: "Circuit Breakers", proficiency: 70, description: "Fault-tolerant communication" },
+    ],
+  },
+
+  // ---------------- Databases ----------------
+  {
+    title: "Databases",
+    icon: <Database className="h-8 w-8 sm:h-10 sm:w-10 text-gray-800 dark:text-cyan-400" />,
+    skills: [
+      { name: "MySQL", proficiency: 82, description: "Relational database & schema design" },
+      { name: "MongoDB", proficiency: 85, description: "NoSQL document database" },
+      { name: "JDBC", proficiency: 75, description: "Low-level database programming" },
+    ],
+  },
+
+  // ---------------- DevOps & Cloud ----------------
+  {
+    title: "DevOps & Cloud",
+    icon: <Code className="h-8 w-8 sm:h-10 sm:w-10 text-gray-800 dark:text-cyan-400" />,
+    skills: [
+      { name: "Docker", proficiency: 80, description: "Containerization & isolated environments" },
+      { name: "Jenkins", proficiency: 75, description: "CI/CD automation pipelines" },
+      { name: "AWS", proficiency: 70, description: "Cloud deployments & services" },
+      { name: "Git", proficiency: 90, description: "Version control & branching strategies" },
+      { name: "GitHub Actions", proficiency: 80, description: "CI/CD workflows" },
+    ],
+  },
+
+  // ---------------- Testing & Quality ----------------
+  {
+    title: "Testing & Quality",
+    icon: <Server className="h-8 w-8 sm:h-10 sm:w-10 text-gray-800 dark:text-cyan-400" />,
+    skills: [
+      { name: "JUnit", proficiency: 80, description: "Unit testing & TDD" },
+      { name: "Mockito", proficiency: 75, description: "Mocking & test isolation" },
+      { name: "Postman", proficiency: 78, description: "API testing & collections" },
+      { name: "Swagger/OpenAPI", proficiency: 82, description: "API documentation & validation" },
+    ],
+  },
+
+  // ---------------- Software Engineering Fundamentals ----------------
+  {
+    title: "Software Engineering Fundamentals",
+    icon: <Globe className="h-8 w-8 sm:h-10 sm:w-10 text-gray-800 dark:text-cyan-400" />,
+    skills: [
+      { name: "Data Structures & Algorithms", proficiency: 82, description: "Logic building & optimization" },
+      { name: "OOP", proficiency: 90, description: "Object-oriented principles & design" },
+      { name: "System Design", proficiency: 78, description: "Designing scalable architectures" },
+      { name: "SOLID Principles", proficiency: 85, description: "Clean & maintainable code" },
+      { name: "Clean Code", proficiency: 88, description: "Readable & maintainable development" },
+    ],
+  },
+
+  // ---------------- Future Learning: Python & GenAI ----------------
+  {
+    title: "Future Learning: Python & GenAI",
+    icon: <Layout className="h-8 w-8 sm:h-10 sm:w-10 text-gray-800 dark:text-cyan-400" />,
+    skills: [
+      { name: "Python for Backend", proficiency: 55, description: "Learning FastAPI & automation" },
+      { name: "FastAPI", proficiency: 20, description: "High-performance Python API framework" },
+      { name: "GenAI Fundamentals", proficiency: 10, description: "Understanding AI tools & LLMs" },
+      { name: "AI Automation", proficiency: 5, description: "Using AI to enhance development workflows" },
+    ],
+  },
+];
+
+
 
   const filteredCategories = useMemo(
     () =>
@@ -179,6 +205,7 @@ export function Skills() {
                 className="group h-full"
               >
                 <Tilt
+                  tiltEnable={typeof window !== "undefined" && window.innerWidth >= 640}
                   tiltMaxAngleX={8}
                   tiltMaxAngleY={8}
                   perspective={1000}
@@ -186,7 +213,7 @@ export function Skills() {
                   transitionSpeed={300}
                   glareEnable={false}
                   className="h-full sm:hover:shadow-cyan-500/10"
-                  disabled={typeof window !== "undefined" && window.innerWidth < 640}
+                // disabled={typeof window !== "undefined" && window.innerWidth < 640}
                 >
                   <Card
                     className="h-full relative bg-white/20 dark:bg-gray-900/20 backdrop-blur-md border-gray-300/50 dark:border-cyan-500/20 shadow-md group-hover:shadow-lg group-hover:border-cyan-500/30 dark:group-hover:border-cyan-400/40 transition-all duration-300"

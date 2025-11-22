@@ -22,10 +22,9 @@ const SOCIAL_LINKS: SocialLink[] = [
 ];
 
 const TYPEWRITER_PHRASES = [
-  "Full Stack Developer",
-  "Backend Specialist",
-  "Scalable Solutions Architect",
-  "Web3 Enthusiast",
+  "Software Engineer",
+  "Java Full Stack Developer",
+  "Backend Developer",
 ];
 
 // Animation Variants
@@ -171,8 +170,8 @@ export const Hero = React.memo(() => {
             className="max-w-[90%] sm:max-w-md text-gray-500 dark:text-gray-300 text-xs sm:text-sm md:text-base mb-6 sm:mb-8 font-['Inter'] leading-relaxed mx-auto"
             variants={itemVariants}
           >
-            Building scalable, user-focused digital experiences with expertise in backend systems and modern frontend frameworks.
-          </motion.p>
+          Building high-performance, fault-tolerant backend systems with expertise in Java, microservices, distributed systems, API design, database scaling, caching, and message-driven workflows.  
+           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-6 sm:mb-8"
             variants={itemVariants}
@@ -222,13 +221,13 @@ export const Hero = React.memo(() => {
             "@context": "https://schema.org",
             "@type": "Person",
             name: "Pragyesh Chauhan",
-            jobTitle: "Full Stack Developer",
+            jobTitle: "Software Engineer",
             description:
-              "Full Stack Developer specializing in backend architecture and modern frontend design.",
-            url: "https://your-portfolio.com",
+              "Software Engineer specializing in Java backend architecture",
+            url: "https://iampragyesh.netlify.app/",
             image: "https://your-portfolio.com/profile.jpg",
             sameAs: SOCIAL_LINKS.map((link) => link.href),
-            knowsAbout: ["Web Development", "Backend Systems", "Frontend Frameworks"],
+            knowsAbout: ["Software Development", "Java Full Stack Development"],
           }),
         }}
       />

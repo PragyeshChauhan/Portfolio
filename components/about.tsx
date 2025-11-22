@@ -19,9 +19,17 @@ const Tilt = dynamic(() => import("react-parallax-tilt"), {
 const calculateExperience = (startDateStr: string): string => {
   const start = new Date(startDateStr);
   const now = new Date();
-  const years = (now.getTime() - start.getTime()) / (1000 * 60 * 60 * 24 * 365.25);
-  return `${years.toFixed(1)}+`;
-  console.log("coming date" + startDateStr)
+
+  let years = now.getFullYear() - start.getFullYear();
+  let months = now.getMonth() - start.getMonth();
+  
+  // Adjust for negative months
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+  
+  return `${years}.${months.toString().padStart(2, "0")}`;
 };
 
 export function About() {
@@ -43,10 +51,10 @@ export function About() {
     }),
     [shouldReduceMotion]
   );
-  const experience = calculateExperience("2023-01-01")
+  const experience = calculateExperience("2022-12-31")
   const stats = useMemo(() => [
     { value: experience, label: "Years Experience" },
-    { value: "9+", label: "Projects Completed" },
+    { value: "10+", label: "Projects Completed" },
   ], []);
 
   const childVariants = useMemo(
@@ -284,7 +292,7 @@ export function About() {
                   transition={{ delay: shouldReduceMotion ? 0 : 0.6 }}
                 >
                   <Link
-                    href="https://docs.google.com/document/d/1YFAvQWRH8kqSCOeW4jktfd7GVKAsSDgqufKgb-L_eXs/edit?usp=sharing"
+                    href="https://docs.google.com/document/d/1-gjCgy9zvg1Gwv9WumJvYYbOazQKzbCeOx37MFrDx5E/edit?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -332,8 +340,9 @@ export function About() {
             },
             knowsAbout: [
               "Backend Development",
-              "JavaScript",
+              "Java",
               "Spring Boot",
+              "Micro Services",
               "Kafka",
               "Redis",
               "MongoDB",

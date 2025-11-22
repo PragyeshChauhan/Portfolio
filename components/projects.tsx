@@ -97,6 +97,30 @@ export function Projects() {
       docUrl: "https://www.fieldequip.com/integrations/",
     },
     {
+      title: "EzPay Wallet",
+      description:
+        "EzPay Wallet is a secure, event-driven digital payment platform built using Java, Spring Boot, Spring Security, Microservices, Kafka, Redis, PostgreSQL, MongoDB, JWT, and Grafana. Inspired by Paytm and PhonePe, it supports API Gateway routing, DPoP authentication, centralized config via Spring Cloud Config Server, Eureka discovery, distributed tracing with Zipkin, and full observability with Prometheus + Grafana. The system consists of modular microservices such as Auth, User, Account, Payment, Transaction, Notification, Loan, Fraud Detection, and Bank Integration services, designed for high scalability and fintech-grade security.",
+      image: "/ezpay.png",
+      technologies: [
+        "Java",
+        "Spring Boot",
+        "Microservices",
+        "Kafka",
+        "Redis",
+        "PostgreSQL",
+        "MongoDB",
+        "JWT",
+        "Grafana",
+        "Prometheus",
+        "Docker",
+        "Zipkin"
+      ],
+      liveUrl: "https://github.com/PragyeshChauhan/EzyPay-Wallet/edit/main/README.md",
+      githubUrl: "https://github.com/PragyeshChauhan/EzyPay-Wallet/edit/main/README.md",
+      docUrl: "https://github.com/PragyeshChauhan/EzyPay-Wallet/edit/main/README.md"
+    },
+
+    {
       title: "CADMaster Website",
       description:
         "A responsive site for CadMaster—your destination for expert CAD drafting, 3D modeling, and architectural design services.",
@@ -263,6 +287,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       className="group h-full"
     >
       <Tilt
+        tiltEnable={typeof window !== "undefined" && window.innerWidth >= 640}
         tiltMaxAngleX={8}
         tiltMaxAngleY={8}
         perspective={1000}
@@ -270,152 +295,163 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         transitionSpeed={300}
         glareEnable={false}
         className="h-full sm:hover:shadow-cyan-500/10"
-        disabled={typeof window !== "undefined" && window.innerWidth < 640}
+        // disabled={typeof window !== "undefined" && window.innerWidth < 640}
       >
-        <Card
-          className="overflow-hidden h-full bg-white/20 dark:bg-gray-900/20 backdrop-blur-md border-gray-300/50 dark:border-cyan-500/20 shadow-md group-hover:shadow-lg group-hover:border-cyan-500/30 dark:group-hover:border-cyan-400/40 transition-all duration-300"
-          role="article"
-          aria-labelledby={`project-title-${index}`}
-        >
-          <div className="relative w-full h-48 sm:h-64 bg-white dark:bg-gray-800">
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              style={{ objectFit: "contain", padding: "1rem" }}
-              className="transition-transform duration-500 group-hover:scale-105"
-              placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F9PQAI8wNPpDDQ+AAAAABJRU5ErkJggg=="
-              loading="lazy"
-            />
-          </div>
-          <CardContent className="p-4 sm:p-6 flex flex-col flex-grow">
-            <h3
-              id={`project-title-${index}`}
-              className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-gray-800 dark:text-cyan-200 font-['Exo_2'] line-clamp-1"
-            >
-              {project.title}
-            </h3>
-            <TooltipProvider>
-              <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
-                {project.technologies.map((tech, techIndex) => (
-                  <Tooltip key={`${tech}-${techIndex}`}>
-                    <TooltipTrigger asChild>
-                      <Badge
-                        className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-gray-100/50 dark:bg-gray-800/50 text-gray-800 dark:text-gray-200 font-['Inter'] rounded-md border-gray-300/50 dark:border-cyan-500/20 hover:bg-cyan-500/30 dark:hover:bg-cyan-500/40 transition-all duration-200 text-xs sm:text-sm cursor-pointer"
-                        role="button"
-                        tabIndex={0}
-                        onKeyDown={(e) => {
-                          if (e.key === "Enter") {
-                            e.currentTarget.focus();
-                          }
-                        }}
-                      >
-                        {tech}
-                      </Badge>
-                    </TooltipTrigger>
-                    <TooltipContent className="bg-gray-800 text-white dark:bg-white dark:text-gray-800 text-xs sm:text-sm max-w-xs">
-                      <p>{tech}</p>
-                    </TooltipContent>
-                  </Tooltip>
-                ))}
-              </div>
-            </TooltipProvider>
-            <p className="text-gray-500 dark:text-gray-300 mb-4 font-['Inter'] text-sm sm:text-base line-clamp-2">
-              {project.description}
-            </p>
-            <div className="mt-auto flex gap-2 sm:gap-3 flex-wrap">
-              <Button
-                size="sm"
-                variant="outline"
-                asChild
-                className="border-cyan-500 text-cyan-600 hover:bg-cyan-500 hover:text-white dark:border-cyan-400 dark:text-cyan-400 dark:hover:bg-cyan-600 dark:hover:text-white transition-all duration-200 text-xs sm:text-sm px-3 sm:px-4"
-                disabled={project.liveUrl === "#"}
-              >
-                <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
-                  Visit Site
-                </Link>
-              </Button>
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    className="border-purple-500 text-purple-600 hover:bg-purple-500 hover:text-white dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-600 dark:hover:text-white transition-all duration-200 text-xs sm:text-sm px-3 sm:px-4"
-                  >
-                    Details
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="max-w-[95vw] sm:max-w-2xl bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-gray-300/50 dark:border-cyan-500/50">
-                  <DialogHeader>
-                    <DialogTitle className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-cyan-200 font-['Exo_2']">
-                      {project.title}
-                    </DialogTitle>
-                  </DialogHeader>
-                  <div className="mt-4">
-                    <div className="relative w-full h-40 sm:h-64 mb-4">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        style={{ objectFit: "contain", padding: "0.5rem sm:1rem" }}
-                        className="rounded-lg"
-                        sizes="(max-width: 640px) 100vw, 50vw"
-                      />
-                    </div>
-                    <p className="text-gray-500 dark:text-gray-300 mb-4 font-['Inter'] text-sm sm:text-base">
-                      {project.description}
-                    </p>
-                    <TooltipProvider>
-                      <div className="flex flex-wrap gap-1 sm:gap-2 mb-4">
-                        {project.technologies.map((tech, techIndex) => (
-                          <Tooltip key={`${tech}-${techIndex}-dialog`}>
-                            <TooltipTrigger asChild>
-                              <Badge
-                                className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-gray-100/50 dark:bg-gray-800/50 text-gray-800 dark:text-gray-200 font-['Inter'] rounded-md border-gray-300/50 dark:border-cyan-500/20 text-xs sm:text-sm cursor-pointer"
-                              >
-                                {tech}
-                              </Badge>
-                            </TooltipTrigger>
-                            <TooltipContent className="bg-gray-800 text-white dark:bg-white dark:text-gray-800 text-xs sm:text-sm max-w-xs">
-                              <p>{tech}</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        ))}
-                      </div>
-                    </TooltipProvider>
-                    <div className="flex gap-2 sm:gap-3 flex-wrap">
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        asChild
-                        className="border-cyan-500 text-cyan-600 hover:bg-cyan-500 hover:text-white dark:border-cyan-400 dark:text-cyan-400 dark:hover:bg-cyan-600 dark:hover:text-white text-xs sm:text-sm px-3 sm:px-4"
-                        disabled={project.liveUrl === "#"}
-                      >
-                        <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                          Visit Site
-                        </Link>
-                      </Button>
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        asChild
-                        className="border-purple-500 text-purple-600 hover:bg-purple-500 hover:text-white dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-600 dark:hover:text-white text-xs sm:text-sm px-3 sm:px-4"
-                        disabled={project.docUrl === "#"}
-                      >
-                        <Link href={project.docUrl} target="_blank" rel="noopener noreferrer">
-                          Documentation
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                </DialogContent>
-              </Dialog>
+      {/* <Tilt
+        tiltEnable={typeof window !== "undefined" && window.innerWidth >= 640}
+        tiltMaxAngleX={8}
+        tiltMaxAngleY={8}
+        perspective={1000}
+        scale={1.02}
+        transitionSpeed={300}
+        glareEnable={false}
+        className="h-full sm:hover:shadow-cyan-500/10"
+      /> */}
+
+      <Card
+        className="overflow-hidden h-full bg-white/20 dark:bg-gray-900/20 backdrop-blur-md border-gray-300/50 dark:border-cyan-500/20 shadow-md group-hover:shadow-lg group-hover:border-cyan-500/30 dark:group-hover:border-cyan-400/40 transition-all duration-300"
+        role="article"
+        aria-labelledby={`project-title-${index}`}
+      >
+        <div className="relative w-full h-48 sm:h-64 bg-white dark:bg-gray-800">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            style={{ objectFit: "contain", padding: "1rem" }}
+            className="transition-transform duration-500 group-hover:scale-105"
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F9PQAI8wNPpDDQ+AAAAABJRU5ErkJggg=="
+            loading="lazy"
+          />
+        </div>
+        <CardContent className="p-4 sm:p-6 flex flex-col flex-grow">
+          <h3
+            id={`project-title-${index}`}
+            className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-gray-800 dark:text-cyan-200 font-['Exo_2'] line-clamp-1"
+          >
+            {project.title}
+          </h3>
+          <TooltipProvider>
+            <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
+              {project.technologies.map((tech, techIndex) => (
+                <Tooltip key={`${tech}-${techIndex}`}>
+                  <TooltipTrigger asChild>
+                    <Badge
+                      className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-gray-100/50 dark:bg-gray-800/50 text-gray-800 dark:text-gray-200 font-['Inter'] rounded-md border-gray-300/50 dark:border-cyan-500/20 hover:bg-cyan-500/30 dark:hover:bg-cyan-500/40 transition-all duration-200 text-xs sm:text-sm cursor-pointer"
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                          e.currentTarget.focus();
+                        }
+                      }}
+                    >
+                      {tech}
+                    </Badge>
+                  </TooltipTrigger>
+                  <TooltipContent className="bg-gray-800 text-white dark:bg-white dark:text-gray-800 text-xs sm:text-sm max-w-xs">
+                    <p>{tech}</p>
+                  </TooltipContent>
+                </Tooltip>
+              ))}
             </div>
-          </CardContent>
-        </Card>
-      </Tilt>
+          </TooltipProvider>
+          <p className="text-gray-500 dark:text-gray-300 mb-4 font-['Inter'] text-sm sm:text-base line-clamp-2">
+            {project.description}
+          </p>
+          <div className="mt-auto flex gap-2 sm:gap-3 flex-wrap">
+            <Button
+              size="sm"
+              variant="outline"
+              asChild
+              className="border-cyan-500 text-cyan-600 hover:bg-cyan-500 hover:text-white dark:border-cyan-400 dark:text-cyan-400 dark:hover:bg-cyan-600 dark:hover:text-white transition-all duration-200 text-xs sm:text-sm px-3 sm:px-4"
+              disabled={project.liveUrl === "#"}
+            >
+              <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+                Visit Site
+              </Link>
+            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="border-purple-500 text-purple-600 hover:bg-purple-500 hover:text-white dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-600 dark:hover:text-white transition-all duration-200 text-xs sm:text-sm px-3 sm:px-4"
+                >
+                  Details
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-[95vw] sm:max-w-2xl bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-gray-300/50 dark:border-cyan-500/50">
+                <DialogHeader>
+                  <DialogTitle className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-cyan-200 font-['Exo_2']">
+                    {project.title}
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="mt-4">
+                  <div className="relative w-full h-40 sm:h-64 mb-4">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      style={{ objectFit: "contain", padding: "0.5rem sm:1rem" }}
+                      className="rounded-lg"
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                    />
+                  </div>
+                  <p className="text-gray-500 dark:text-gray-300 mb-4 font-['Inter'] text-sm sm:text-base">
+                    {project.description}
+                  </p>
+                  <TooltipProvider>
+                    <div className="flex flex-wrap gap-1 sm:gap-2 mb-4">
+                      {project.technologies.map((tech, techIndex) => (
+                        <Tooltip key={`${tech}-${techIndex}-dialog`}>
+                          <TooltipTrigger asChild>
+                            <Badge
+                              className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-gray-100/50 dark:bg-gray-800/50 text-gray-800 dark:text-gray-200 font-['Inter'] rounded-md border-gray-300/50 dark:border-cyan-500/20 text-xs sm:text-sm cursor-pointer"
+                            >
+                              {tech}
+                            </Badge>
+                          </TooltipTrigger>
+                          <TooltipContent className="bg-gray-800 text-white dark:bg-white dark:text-gray-800 text-xs sm:text-sm max-w-xs">
+                            <p>{tech}</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      ))}
+                    </div>
+                  </TooltipProvider>
+                  <div className="flex gap-2 sm:gap-3 flex-wrap">
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      asChild
+                      className="border-cyan-500 text-cyan-600 hover:bg-cyan-500 hover:text-white dark:border-cyan-400 dark:text-cyan-400 dark:hover:bg-cyan-600 dark:hover:text-white text-xs sm:text-sm px-3 sm:px-4"
+                      disabled={project.liveUrl === "#"}
+                    >
+                      <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        Visit Site
+                      </Link>
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      asChild
+                      className="border-purple-500 text-purple-600 hover:bg-purple-500 hover:text-white dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-600 dark:hover:text-white text-xs sm:text-sm px-3 sm:px-4"
+                      disabled={project.docUrl === "#"}
+                    >
+                      <Link href={project.docUrl} target="_blank" rel="noopener noreferrer">
+                        Documentation
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+          </div>
+        </CardContent>
+      </Card>
+    </Tilt>
     </motion.div>
   );
 }

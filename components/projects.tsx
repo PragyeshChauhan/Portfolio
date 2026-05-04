@@ -39,6 +39,7 @@ interface Project {
   liveUrl: string;
   githubUrl: string;
   docUrl: string;
+  owner?: string;
 }
 
 export function Projects() {
@@ -55,6 +56,7 @@ export function Projects() {
       liveUrl: "https://www.fieldequip.com/",
       githubUrl: "#",
       docUrl: "https://www.fieldequip.com/field-service-management-software",
+      owner: "@bursys",
     },
     {
       title: "FieldEquip - Field Ticketing",
@@ -65,6 +67,7 @@ export function Projects() {
       liveUrl: "https://www.fieldequip.com/",
       githubUrl: "#",
       docUrl: "https://www.fieldequip.com/field-ticketing-management/",
+      owner: "@bursys",
     },
     {
       title: "FieldEquip - Asset Management",
@@ -75,6 +78,7 @@ export function Projects() {
       liveUrl: "https://www.fieldequip.com/",
       githubUrl: "#",
       docUrl: "https://www.fieldequip.com/asset-management",
+      owner: "@bursys",
     },
     {
       title: "FieldEquip - Time Management",
@@ -85,6 +89,7 @@ export function Projects() {
       liveUrl: "https://www.fieldequip.com/",
       githubUrl: "#",
       docUrl: "https://www.fieldequip.com/time-management",
+      owner: "@bursys",
     },
     {
       title: "FieldEquip - Integrations",
@@ -95,6 +100,7 @@ export function Projects() {
       liveUrl: "https://www.fieldequip.com/",
       githubUrl: "#",
       docUrl: "https://www.fieldequip.com/integrations/",
+      owner: "@bursys",
     },
     {
       title: "EzPay Wallet",
@@ -326,12 +332,19 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           />
         </div>
         <CardContent className="p-4 sm:p-6 flex flex-col flex-grow">
-          <h3
-            id={`project-title-${index}`}
-            className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-gray-800 dark:text-cyan-200 font-['Exo_2'] line-clamp-1"
-          >
-            {project.title}
-          </h3>
+          <div className="mb-3 sm:mb-4">
+            <h3
+              id={`project-title-${index}`}
+              className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-cyan-200 font-['Exo_2'] line-clamp-1"
+            >
+              {project.title}
+            </h3>
+            {project.owner ? (
+              <span className="mt-3 inline-flex items-center rounded-full border border-cyan-500 bg-cyan-600 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-white shadow-lg shadow-cyan-500/25 dark:border-cyan-400 dark:bg-cyan-500 dark:text-white">
+                Owned by {project.owner}
+              </span>
+            ) : null}
+          </div>
           <TooltipProvider>
             <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
               {project.technologies.map((tech, techIndex) => (
@@ -388,6 +401,11 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                   <DialogTitle className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-cyan-200 font-['Exo_2']">
                     {project.title}
                   </DialogTitle>
+                  {project.owner ? (
+                    <p className="mt-3 inline-flex items-center rounded-full border border-cyan-500 bg-cyan-600 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-white shadow-lg shadow-cyan-500/25 dark:border-cyan-400 dark:bg-cyan-500 dark:text-white">
+                      Owned by {project.owner}
+                    </p>
+                  ) : null}
                 </DialogHeader>
                 <div className="mt-4">
                   <div className="relative w-full h-40 sm:h-64 mb-4">

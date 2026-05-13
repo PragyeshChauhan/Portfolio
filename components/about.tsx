@@ -98,7 +98,7 @@ export function About() {
           position: relative;
           border-radius: 1rem;
           overflow: hidden;
-          border: 1px solid rgba(6, 182, 212, 0.2);
+          border: 2px solid rgba(6, 182, 212, 0.6);
           transition: border-color 0.3s ease;
         }
         .dark .profile-outline {
@@ -146,7 +146,7 @@ export function About() {
           box-shadow: 0 8px 32px rgba(34, 211, 238, 0.3);
         }
         .text-glow {
-          text-shadow: 0 0 6px rgba(6, 182, 212, 0.4);
+          text-shadow: none;
         }
         .dark .text-glow {
           text-shadow: 0 0 6px rgba(34, 211, 238, 0.5);
@@ -252,7 +252,7 @@ export function About() {
                   Who am I?
                 </h3>
                 <p
-                  className="text-gray-600 dark:text-gray-300 mb-4 font-['Inter'] text-sm sm:text-base leading-relaxed"
+                  className="text-gray-700 dark:text-gray-300 mb-4 font-['Inter'] text-sm sm:text-base leading-relaxed"
                   aria-describedby="about-description"
                 >
                   I'm Pragyesh Chauhan, a Software Engineer at Bursys with over {experience} years of
@@ -260,7 +260,7 @@ export function About() {
                   applications that deliver measurable business impact.
                 </p>
                 <p
-                  className="text-gray-600 dark:text-gray-300 mb-6 font-['Inter'] text-sm sm:text-base leading-relaxed"
+                  className="text-gray-700 dark:text-gray-300 mb-6 font-['Inter'] text-sm sm:text-base leading-relaxed"
                   aria-describedby="about-description"
                 >
                   I'm passionate about advancing my expertise in JavaScript, React.js,
@@ -279,7 +279,7 @@ export function About() {
                           <h4 className="font-bold text-2xl sm:text-3xl text-cyan-600 dark:text-cyan-400 mb-1 text-glow">
                             {stat.value}
                           </h4>
-                          <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">
+                          <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300">
                             {stat.label}
                           </p>
                         </CardContent>

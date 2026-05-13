@@ -167,7 +167,7 @@ export function Projects() {
           My Projects
         </motion.h2>
         <motion.p
-          className="text-gray-500 dark:text-gray-300 text-center max-w-3xl mx-auto mb-8 sm:mb-12 font-['Inter'] text-sm sm:text-base md:text-lg"
+          className="text-gray-700 dark:text-gray-300 text-center max-w-3xl mx-auto mb-8 sm:mb-12 font-['Inter'] text-sm sm:text-base md:text-lg"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
@@ -313,7 +313,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       /> */}
 
       <Card
-        className="overflow-hidden h-full bg-white/40 dark:bg-gray-900/20 backdrop-blur-md border-gray-400/70 dark:border-cyan-500/20 shadow-md group-hover:shadow-lg group-hover:border-cyan-600/50 dark:group-hover:border-cyan-400/40 transition-all duration-300"
+        className="overflow-hidden h-full bg-white/60 dark:bg-gray-900/20 backdrop-blur-md border-gray-400/70 dark:border-cyan-500/20 shadow-md group-hover:shadow-lg group-hover:border-cyan-600/50 dark:group-hover:border-cyan-400/40 transition-all duration-300"
         role="article"
         aria-labelledby={`project-title-${index}`}
       >
@@ -349,7 +349,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 <Tooltip key={`${tech}-${techIndex}`}>
                   <TooltipTrigger asChild>
                     <Badge
-                      className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-gray-100/50 dark:bg-gray-800/50 text-gray-800 dark:text-gray-200 font-['Inter'] rounded-md border-gray-300/50 dark:border-cyan-500/20 hover:bg-cyan-500/30 dark:hover:bg-cyan-500/40 transition-all duration-200 text-xs sm:text-sm cursor-pointer"
+                      className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-gray-200/80 dark:bg-gray-800/50 text-gray-900 dark:text-gray-200 font-['Inter'] rounded-md border-gray-400 dark:border-cyan-500/20 hover:bg-cyan-500/40 dark:hover:bg-cyan-500/40 transition-all duration-200 text-xs sm:text-sm cursor-pointer"
                       role="button"
                       tabIndex={0}
                       onKeyDown={(e) => {
@@ -368,7 +368,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               ))}
             </div>
           </TooltipProvider>
-          <p className="text-gray-500 dark:text-gray-300 mb-4 font-['Inter'] text-sm sm:text-base line-clamp-2">
+          <p className="text-gray-700 dark:text-gray-300 mb-4 font-['Inter'] text-sm sm:text-base line-clamp-2">
             {project.description}
           </p>
           <div className="mt-auto flex gap-2 sm:gap-3 flex-wrap">

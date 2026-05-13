@@ -169,7 +169,7 @@ export function Contact() {
                     />
                     <CardContent className="p-6 flex flex-col items-center text-center relative z-10">
                       <motion.div
-                        className="p-3 rounded-full bg-gradient-to-r from-cyan-500/35 to-purple-500/35 dark:from-cyan-500/30 dark:to-purple-500/30 mb-4"
+                        className="p-3 rounded-full bg-gradient-to-r from-cyan-500/50 to-purple-500/50 dark:from-cyan-500/30 dark:to-purple-500/30 mb-4"
                         animate={{ rotate: [0, 360] }}
                         transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
                       >
@@ -185,7 +185,7 @@ export function Contact() {
                         href={info.link}
                         target={info.link.startsWith("http") ? "_blank" : undefined}
                         rel={info.link.startsWith("http") ? "noopener noreferrer" : undefined}
-                        className="text-muted-foreground hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors font-['Inter']"
+                        className="text-gray-700 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors font-['Inter']"
                         aria-label={`${info.title}: ${info.value}`}
                       >
                         {info.value}
@@ -225,7 +225,7 @@ export function Contact() {
                       />
                       <Label
                         htmlFor="name"
-                        className="absolute left-3 top-3 text-sm text-gray-600 dark:text-gray-400 transition-all duration-200 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-cyan-500 peer-focus:bg-white dark:peer-focus:bg-gray-900 peer-focus:px-1 dark:peer-focus:text-cyan-400 peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:bg-white dark:peer-not-placeholder-shown:bg-gray-900 peer-not-placeholder-shown:px-1"
+                        className="absolute left-3 top-3 text-sm text-gray-700 dark:text-gray-400 transition-all duration-200 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-cyan-600 peer-focus:bg-white dark:peer-focus:bg-gray-900 peer-focus:px-1 dark:peer-focus:text-cyan-400 peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:bg-white dark:peer-not-placeholder-shown:bg-gray-900 peer-not-placeholder-shown:px-1"
                       >
                         Name
                       </Label>
@@ -250,7 +250,7 @@ export function Contact() {
                       />
                       <Label
                         htmlFor="email"
-                        className="absolute left-3 top-3 text-sm text-gray-600 dark:text-gray-400 transition-all duration-200 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-cyan-500 peer-focus:bg-white dark:peer-focus:bg-gray-900 peer-focus:px-1 dark:peer-focus:text-cyan-400 peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:bg-white dark:peer-not-placeholder-shown:bg-gray-900 peer-not-placeholder-shown:px-1"
+                        className="absolute left-3 top-3 text-sm text-gray-700 dark:text-gray-400 transition-all duration-200 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-cyan-600 peer-focus:bg-white dark:peer-focus:bg-gray-900 peer-focus:px-1 dark:peer-focus:text-cyan-400 peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:bg-white dark:peer-not-placeholder-shown:bg-gray-900 peer-not-placeholder-shown:px-1"
                       >
                         Email
                       </Label>
@@ -300,7 +300,7 @@ export function Contact() {
                     />
                     <Label
                       htmlFor="message"
-                      className="absolute left-3 top-3 text-sm text-gray-600 dark:text-gray-400 transition-all duration-200 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-cyan-500 peer-focus:bg-white dark:peer-focus:bg-gray-900 peer-focus:px-1 dark:peer-focus:text-cyan-400 peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:bg-white dark:peer-not-placeholder-shown:bg-gray-900 peer-not-placeholder-shown:px-1"
+                      className="absolute left-3 top-3 text-sm text-gray-700 dark:text-gray-400 transition-all duration-200 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-cyan-600 peer-focus:bg-white dark:peer-focus:bg-gray-900 peer-focus:px-1 dark:peer-focus:text-cyan-400 peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:bg-white dark:peer-not-placeholder-shown:bg-gray-900 peer-not-placeholder-shown:px-1"
                     >
                       Message
                     </Label>

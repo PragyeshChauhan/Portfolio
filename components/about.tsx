@@ -20,8 +20,8 @@ const calculateExperience = (startDateStr: string): string => {
   const start = new Date(startDateStr);
   const now = new Date();
 
-  let years = now.getFullYear() - start.getFullYear();
-  let months = now.getMonth() - start.getMonth();
+  let years = now.getFullYear() - start.getFullYear() +3;
+  let months = now.getMonth() - start.getMonth() + 1;
   
   // Adjust for negative months
   if (months < 0) {
@@ -29,7 +29,7 @@ const calculateExperience = (startDateStr: string): string => {
     months += 12;
   }
   
-  return `${years}.${months.toString().padStart(2, "0")}`;
+  return `${years}.${months.toString().padStart(2, "")}`;
 };
 
 export function About() {
@@ -51,7 +51,7 @@ export function About() {
     }),
     [shouldReduceMotion]
   );
-  const experience = calculateExperience("2022-12-31")
+  const experience = calculateExperience("2026-03-23") + "+";
   const stats = useMemo(() => [
     { value: experience, label: "Years Experience" },
     { value: "10+", label: "Projects Completed" },
@@ -128,9 +128,9 @@ export function About() {
           z-index: 10;
         }
         .glass-card {
-          background: rgba(255, 255, 255, 0.15);
+          background: rgba(255, 255, 255, 0.5);
           backdrop-filter: blur(12px);
-          border: 1px solid rgba(6, 182, 212, 0.2);
+          border: 1.5px solid rgba(6, 182, 212, 0.4);
           border-radius: 0.75rem;
           transition: all 0.3s ease;
         }
@@ -276,7 +276,7 @@ export function About() {
                     >
                       <Card className="glass-card">
                         <CardContent className="p-4 sm:p-5">
-                          <h4 className="font-bold text-2xl sm:text-3xl text-cyan-500 dark:text-cyan-400 mb-1 text-glow">
+                          <h4 className="font-bold text-2xl sm:text-3xl text-cyan-600 dark:text-cyan-400 mb-1 text-glow">
                             {stat.value}
                           </h4>
                           <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">
@@ -292,7 +292,7 @@ export function About() {
                   transition={{ delay: shouldReduceMotion ? 0 : 0.6 }}
                 >
                   <Link
-                    href="https://docs.google.com/document/d/1-gjCgy9zvg1Gwv9WumJvYYbOazQKzbCeOx37MFrDx5E/edit?usp=sharing"
+                    href="https://docs.google.com/document/d/1V2ZfqEX5UFpgZPNPXgQ5HL-dDAAf4tuvYO4er4NCsRo/edit?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

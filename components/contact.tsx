@@ -159,17 +159,17 @@ export function Contact() {
                   className="h-full"
                 >
                   <Card
-                    className="h-full relative border-gray-300 dark:border-cyan-500/30 shadow-md group-hover:shadow-lg group-hover:border-cyan-500/50 dark:group-hover:border-cyan-400/70 transition-all duration-300 will-change-transform"
+                    className="h-full relative border-gray-400 dark:border-cyan-500/30 shadow-md group-hover:shadow-lg group-hover:border-cyan-600 dark:group-hover:border-cyan-400/70 transition-all duration-300 will-change-transform"
                     role="region"
                     aria-labelledby={`contact-info-${index}`}
                   >
                     <div
-                      className="absolute inset-0 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm z-[-1]"
+                      className="absolute inset-0 bg-white/75 dark:bg-gray-900/60 backdrop-blur-sm z-[-1]"
                       aria-hidden="true"
                     />
                     <CardContent className="p-6 flex flex-col items-center text-center relative z-10">
                       <motion.div
-                        className="p-3 rounded-full bg-gradient-to-r from-cyan-500/20 to-purple-500/20 dark:from-cyan-500/30 dark:to-purple-500/30 mb-4"
+                        className="p-3 rounded-full bg-gradient-to-r from-cyan-500/35 to-purple-500/35 dark:from-cyan-500/30 dark:to-purple-500/30 mb-4"
                         animate={{ rotate: [0, 360] }}
                         transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
                       >
@@ -203,9 +203,9 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <Card className="max-w-2xl mx-auto relative border-gray-300 dark:border-cyan-500/30 shadow-lg">
+            <Card className="max-w-2xl mx-auto relative border-gray-400 dark:border-cyan-500/30 shadow-lg">
               <div
-                className="absolute inset-0 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm z-[-1]"
+                className="absolute inset-0 bg-white/75 dark:bg-gray-900/60 backdrop-blur-sm z-[-1]"
                 aria-hidden="true"
               />
               <CardContent className="p-6 relative z-10">
@@ -219,7 +219,7 @@ export function Contact() {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder=" "
-                        className="bg-transparent border-gray-300 dark:border-cyan-500/30 text-gray-900 dark:text-gray-100 focus:ring-cyan-500 focus:ring-2 focus:ring-offset-1 peer h-12 pt-4"
+                        className="bg-transparent border-gray-400 dark:border-cyan-500/30 text-gray-900 dark:text-gray-100 focus:ring-cyan-500 focus:ring-2 peer h-12 pt-4"
                         aria-invalid={!!errors.name}
                         aria-describedby={errors.name ? "name-error" : undefined}
                       />
@@ -244,7 +244,7 @@ export function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder=" "
-                        className="bg-transparent border-gray-300 dark:border-cyan-500/30 text-gray-900 dark:text-gray-100 focus:ring-cyan-500 focus:ring-2 focus:ring-offset-1 peer h-12 pt-4"
+                        className="bg-transparent border-gray-400 dark:border-cyan-500/30 text-gray-900 dark:text-gray-100 focus:ring-cyan-500 focus:ring-2 peer h-12 pt-4"
                         aria-invalid={!!errors.email}
                         aria-describedby={errors.email ? "email-error" : undefined}
                       />
@@ -269,7 +269,7 @@ export function Contact() {
                       value={formData.subject}
                       onChange={handleChange}
                       placeholder=" "
-                      className="bg-transparent border-gray-300 dark:border-cyan-500/30 text-gray-900 dark:text-gray-100 focus:ring-cyan-500 focus:ring-2 focus:ring-offset-1 peer h-12 pt-4"
+                      className="bg-transparent border-gray-400 dark:border-cyan-500/30 text-gray-900 dark:text-gray-100 focus:ring-cyan-500 focus:ring-2 peer h-12 pt-4"
                       aria-invalid={!!errors.subject}
                       aria-describedby={errors.subject ? "subject-error" : undefined}
                     />
@@ -294,7 +294,7 @@ export function Contact() {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder=" "
-                      className="bg-transparent border-gray-300 dark:border-cyan-500/30 text-gray-900 dark:text-gray-100 focus:ring-cyan-500 focus:ring-2 focus:ring-offset-1 peer pt-4"
+                      className="bg-transparent border-gray-400 dark:border-cyan-500/30 text-gray-900 dark:text-gray-100 focus:ring-cyan-500 focus:ring-2 peer pt-4"
                       aria-invalid={!!errors.message}
                       aria-describedby={errors.message ? "message-error" : undefined}
                     />

@@ -116,10 +116,8 @@ export function Projects() {
         "PostgreSQL",
         "MongoDB",
         "JWT",
-        "Grafana",
-        "Prometheus",
+     
         "Docker",
-        "Zipkin"
       ],
       liveUrl: "https://github.com/PragyeshChauhan/EzyPay-Wallet/edit/main/README.md",
       githubUrl: "https://github.com/PragyeshChauhan/EzyPay-Wallet/edit/main/README.md",
@@ -131,7 +129,7 @@ export function Projects() {
       description:
         "A responsive site for CadMaster—your destination for expert CAD drafting, 3D modeling, and architectural design services.",
       image: "/cadMaster.png",
-      technologies: ["React.js", "Tailwind CSS", "HTML", "JavaScript", "TypeScript"],
+      technologies: ["React.js", "Tailwind CSS", "HTML", "JavaScript" ],
       liveUrl: "https://cadmaster.netlify.app/",
       githubUrl: "#",
       docUrl: "#",
@@ -315,7 +313,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       /> */}
 
       <Card
-        className="overflow-hidden h-full bg-white/20 dark:bg-gray-900/20 backdrop-blur-md border-gray-300/50 dark:border-cyan-500/20 shadow-md group-hover:shadow-lg group-hover:border-cyan-500/30 dark:group-hover:border-cyan-400/40 transition-all duration-300"
+        className="overflow-hidden h-full bg-white/40 dark:bg-gray-900/20 backdrop-blur-md border-gray-400/70 dark:border-cyan-500/20 shadow-md group-hover:shadow-lg group-hover:border-cyan-600/50 dark:group-hover:border-cyan-400/40 transition-all duration-300"
         role="article"
         aria-labelledby={`project-title-${index}`}
       >
@@ -340,8 +338,8 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               {project.title}
             </h3>
             {project.owner ? (
-              <span className="mt-3 inline-flex items-center rounded-full border border-cyan-500 bg-cyan-600 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-white shadow-lg shadow-cyan-500/25 dark:border-cyan-400 dark:bg-cyan-500 dark:text-white">
-                Owned by {project.owner}
+              <span className="mt-1 inline-flex items-center text-[10px] font-medium text-gray-500 dark:text-gray-400">
+                {project.owner}
               </span>
             ) : null}
           </div>
@@ -402,7 +400,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                     {project.title}
                   </DialogTitle>
                   {project.owner ? (
-                    <p className="mt-3 inline-flex items-center rounded-full border border-cyan-500 bg-cyan-600 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-white shadow-lg shadow-cyan-500/25 dark:border-cyan-400 dark:bg-cyan-500 dark:text-white">
+                    <p className="mt-3 inline-flex items-center rounded-full border border-cyan-500 bg-cyan-600 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-white dark:border-cyan-400 dark:bg-cyan-500 dark:text-white">
                       Owned by {project.owner}
                     </p>
                   ) : null}

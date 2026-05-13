@@ -178,7 +178,7 @@ export function Projects() {
 
         {/* Search and Filter Dropdown */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12 justify-center items-center max-w-4xl mx-auto"
+          className="flex flex-col gap-2 sm:gap-4 mb-8 sm:mb-12 justify-center items-center max-w-4xl mx-auto px-2 sm:px-0"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
@@ -188,12 +188,12 @@ export function Projects() {
             placeholder="Search projects..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full sm:w-1/2 bg-white/20 dark:bg-gray-800/20 backdrop-blur-md border-gray-300/50 dark:border-cyan-500/20 focus:ring-cyan-500 focus:border-cyan-500 text-sm sm:text-base"
+            className="w-full bg-white/20 dark:bg-gray-800/20 backdrop-blur-md border-gray-300/50 dark:border-cyan-500/20 focus:ring-cyan-500 focus:border-cyan-500 text-xs sm:text-base px-3 sm:px-4 py-2 sm:py-2.5"
             aria-label="Search projects"
           />
           <Select value={selectedTech} onValueChange={setSelectedTech}>
             <SelectTrigger
-              className="w-full sm:w-1/3 md:w-1/4 bg-white/20 dark:bg-gray-800/20 backdrop-blur-md border-gray-300/50 dark:border-cyan-500/20 focus:ring-cyan-500 focus:border-cyan-500 text-sm sm:text-base"
+              className="w-full bg-white/20 dark:bg-gray-800/20 backdrop-blur-md border-gray-300/50 dark:border-cyan-500/20 focus:ring-cyan-500 focus:border-cyan-500 text-xs sm:text-base"
               aria-label="Filter projects by technology"
             >
               <SelectValue placeholder="Filter by Skill" />
@@ -213,13 +213,13 @@ export function Projects() {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {filteredProjects.length > 0 ? (
             filteredProjects.map((project, index) => (
               <ProjectCard key={project.title} project={project} index={index} />
             ))
           ) : (
-            <p className="text-center col-span-full text-gray-500 dark:text-gray-300 text-sm sm:text-base">
+            <p className="text-center col-span-full text-gray-500 dark:text-gray-300 text-xs sm:text-base px-2">
               No projects found. Try adjusting your filters.
             </p>
           )}
@@ -317,23 +317,23 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         role="article"
         aria-labelledby={`project-title-${index}`}
       >
-        <div className="relative w-full h-48 sm:h-64 bg-white dark:bg-gray-800">
+        <div className="relative w-full h-40 sm:h-48 md:h-64 bg-white dark:bg-gray-800">
           <Image
             src={project.image}
             alt={project.title}
             fill
-            style={{ objectFit: "contain", padding: "1rem" }}
+            style={{ objectFit: "contain", padding: "0.75rem" }}
             className="transition-transform duration-500 group-hover:scale-105"
             placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F9PQAI8wNPpDDQ+AAAAABJRU5ErkJggg=="
             loading="lazy"
           />
         </div>
-        <CardContent className="p-4 sm:p-6 flex flex-col flex-grow">
-          <div className="mb-3 sm:mb-4">
+        <CardContent className="p-3 sm:p-4 md:p-6 flex flex-col flex-grow">
+          <div className="mb-2 sm:mb-3 md:mb-4">
             <h3
               id={`project-title-${index}`}
-              className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-cyan-200 font-['Exo_2'] line-clamp-1"
+              className="text-base sm:text-lg md:text-xl font-semibold text-gray-800 dark:text-cyan-200 font-['Exo_2'] line-clamp-1"
             >
               {project.title}
             </h3>
@@ -344,7 +344,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             ) : null}
           </div>
           <TooltipProvider>
-            <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
+            <div className="flex flex-wrap gap-1 mb-2 sm:mb-3 md:mb-4">
               {project.technologies.map((tech, techIndex) => (
                 <Tooltip key={`${tech}-${techIndex}`}>
                   <TooltipTrigger asChild>
@@ -368,15 +368,15 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               ))}
             </div>
           </TooltipProvider>
-          <p className="text-gray-700 dark:text-gray-300 mb-4 font-['Inter'] text-sm sm:text-base line-clamp-2">
+          <p className="text-gray-700 dark:text-gray-300 mb-3 sm:mb-4 font-['Inter'] text-xs sm:text-sm line-clamp-2">
             {project.description}
           </p>
-          <div className="mt-auto flex gap-2 sm:gap-3 flex-wrap">
+          <div className="mt-auto flex gap-2 flex-wrap">
             <Button
               size="sm"
               variant="outline"
               asChild
-              className="border-cyan-500 text-cyan-600 hover:bg-cyan-500 hover:text-white dark:border-cyan-400 dark:text-cyan-400 dark:hover:bg-cyan-600 dark:hover:text-white transition-all duration-200 text-xs sm:text-sm px-3 sm:px-4"
+              className="border-cyan-500 text-cyan-600 hover:bg-cyan-500 hover:text-white dark:border-cyan-400 dark:text-cyan-400 dark:hover:bg-cyan-600 dark:hover:text-white transition-all duration-200 text-xs px-2 sm:px-3 py-1.5 sm:py-2 h-8 sm:h-9"
               disabled={project.liveUrl === "#"}
             >
               <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">

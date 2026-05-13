@@ -141,7 +141,7 @@ export const Hero = React.memo(() => {
       ref={ref}
       className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center py-8 sm:py-12 bg-transparent overflow-hidden"
     >
-      <div className="container relative z-10 flex flex-col items-center text-center px-4 sm:px-6 max-w-[90%] sm:max-w-3xl">
+      <div className="container relative z-10 flex flex-col items-center text-center px-4 sm:px-6 max-w-[95%] sm:max-w-3xl">
         <motion.div
           className="relative rounded-2xl bg-white/20 dark:bg-gray-800/20 backdrop-blur-md p-4 sm:p-6 md:p-8 border border-gray-300/50 dark:border-cyan-500/20 shadow-lg dark:shadow-cyan-500/10 w-full"
           variants={containerVariants}

@@ -194,10 +194,10 @@ export function About() {
           }
         }
       `}</style>
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 max-w-[90%] sm:max-w-5xl">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 max-w-[95%] sm:max-w-5xl">
         <motion.h2
           id="about-heading"
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-gray-800 dark:text-cyan-100 font-['Orbitron'] text-glow"
+          className="text-2xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 text-gray-800 dark:text-cyan-100 font-['Orbitron'] text-glow"
           variants={childVariants}
           initial="hidden"
           whileInView="visible"
@@ -206,7 +206,7 @@ export function About() {
           About Me
         </motion.h2>
         <motion.div
-          className="grid md:grid-cols-2 gap-8 items-center"
+          className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -225,7 +225,7 @@ export function About() {
               glareMaxOpacity={0.2}
               glareColor="#e0f7ff"
               glarePosition="all"
-              className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 profile-outline shadow-glow"
+              className="w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 profile-outline shadow-glow"
             >
               <Image
                 src="/profile_pic.jpg?height=320&width=320"
@@ -246,13 +246,13 @@ export function About() {
             <Card className="glass-card who-am-i-card">
               <CardContent className="p-0">
                 <h3
-                  className="text-xl sm:text-2xl font-semibold mb-4 text-gray-800 dark:text-cyan-200 font-['Exo_2'] text-glow"
+                  className="text-lg sm:text-2xl font-semibold mb-3 sm:mb-4 text-gray-800 dark:text-cyan-200 font-['Exo_2'] text-glow"
                   id="about-description"
                 >
                   Who am I?
                 </h3>
                 <p
-                  className="text-gray-700 dark:text-gray-300 mb-4 font-['Inter'] text-sm sm:text-base leading-relaxed"
+                  className="text-gray-700 dark:text-gray-300 mb-3 sm:mb-4 font-['Inter'] text-xs sm:text-base leading-relaxed"
                   aria-describedby="about-description"
                 >
                   I'm Pragyesh Chauhan, a Software Engineer at Bursys with over {experience} years of
@@ -260,14 +260,14 @@ export function About() {
                   applications that deliver measurable business impact.
                 </p>
                 <p
-                  className="text-gray-700 dark:text-gray-300 mb-6 font-['Inter'] text-sm sm:text-base leading-relaxed"
+                  className="text-gray-700 dark:text-gray-300 mb-4 sm:mb-6 font-['Inter'] text-xs sm:text-base leading-relaxed"
                   aria-describedby="about-description"
                 >
                   I'm passionate about advancing my expertise in JavaScript, React.js,
                   Node.js, and full-stack technologies to build seamless end-to-end
                   solutions.
                 </p>
-                <div className="grid stat-grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div className="grid stat-grid grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
                   {stats.map((stat, index) => (
                     <motion.div
                       key={index}

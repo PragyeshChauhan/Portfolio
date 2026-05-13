@@ -132,15 +132,15 @@ export function Contact() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-cyan-300 font-['Orbitron'] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 dark:text-cyan-300 font-['Orbitron'] tracking-tight">
               Get In Touch
             </h2>
-            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto font-['Inter'] text-lg">
+            <p className="text-gray-700 dark:text-gray-300 mt-3 sm:mt-4 max-w-2xl mx-auto font-['Inter'] text-sm sm:text-lg">
               Let’s connect to discuss projects or opportunities!
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
             {contactInfo.map((info, index) => (
               <motion.div
                 key={index}
@@ -208,9 +208,9 @@ export function Contact() {
                 className="absolute inset-0 bg-white/75 dark:bg-gray-900/60 backdrop-blur-sm z-[-1]"
                 aria-hidden="true"
               />
-              <CardContent className="p-6 relative z-10">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-6">
+              <CardContent className="p-4 sm:p-6 relative z-10">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div className="space-y-1 relative">
                       <Input
                         id="name"
@@ -219,7 +219,7 @@ export function Contact() {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder=" "
-                        className="bg-transparent border-gray-400 dark:border-cyan-500/30 text-gray-900 dark:text-gray-100 focus:ring-cyan-500 focus:ring-2 peer h-12 pt-4"
+                        className="bg-transparent border-gray-400 dark:border-cyan-500/30 text-gray-900 dark:text-gray-100 focus:ring-cyan-500 focus:ring-2 peer h-11 sm:h-12 pt-4 text-sm sm:text-base"
                         aria-invalid={!!errors.name}
                         aria-describedby={errors.name ? "name-error" : undefined}
                       />
@@ -244,7 +244,7 @@ export function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder=" "
-                        className="bg-transparent border-gray-400 dark:border-cyan-500/30 text-gray-900 dark:text-gray-100 focus:ring-cyan-500 focus:ring-2 peer h-12 pt-4"
+                        className="bg-transparent border-gray-400 dark:border-cyan-500/30 text-gray-900 dark:text-gray-100 focus:ring-cyan-500 focus:ring-2 peer h-11 sm:h-12 pt-4 text-sm sm:text-base"
                         aria-invalid={!!errors.email}
                         aria-describedby={errors.email ? "email-error" : undefined}
                       />
@@ -269,7 +269,7 @@ export function Contact() {
                       value={formData.subject}
                       onChange={handleChange}
                       placeholder=" "
-                      className="bg-transparent border-gray-400 dark:border-cyan-500/30 text-gray-900 dark:text-gray-100 focus:ring-cyan-500 focus:ring-2 peer h-12 pt-4"
+                      className="bg-transparent border-gray-400 dark:border-cyan-500/30 text-gray-900 dark:text-gray-100 focus:ring-cyan-500 focus:ring-2 peer h-11 sm:h-12 pt-4 text-sm sm:text-base"
                       aria-invalid={!!errors.subject}
                       aria-describedby={errors.subject ? "subject-error" : undefined}
                     />
@@ -289,12 +289,12 @@ export function Contact() {
                     <Textarea
                       id="message"
                       name="message"
-                      rows={5}
+                      rows={4}
                       required
                       value={formData.message}
                       onChange={handleChange}
                       placeholder=" "
-                      className="bg-transparent border-gray-400 dark:border-cyan-500/30 text-gray-900 dark:text-gray-100 focus:ring-cyan-500 focus:ring-2 peer pt-4"
+                      className="bg-transparent border-gray-400 dark:border-cyan-500/30 text-gray-900 dark:text-gray-100 focus:ring-cyan-500 focus:ring-2 peer pt-4 text-sm sm:text-base"
                       aria-invalid={!!errors.message}
                       aria-describedby={errors.message ? "message-error" : undefined}
                     />
@@ -334,11 +334,11 @@ export function Contact() {
       {/* Toast-like Feedback */}
       {submitStatus && (
         <motion.div
-          className={`fixed bottom-16 right-6 p-4 rounded-lg flex items-center gap-2 max-w-sm z-[10000] ${
+          className={`fixed bottom-4 sm:bottom-16 left-4 sm:left-auto right-4 sm:right-6 p-3 sm:p-4 rounded-lg flex items-center gap-2 max-w-sm z-[10000] ${
             submitStatus === "success"
               ? "bg-green-600 dark:bg-green-500 text-white"
               : "bg-red-600 dark:bg-red-500 text-white"
-          } shadow-2xl border border-white/20`}
+          } shadow-2xl border border-white/20 text-sm sm:text-base`}
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 100 }}
@@ -346,7 +346,7 @@ export function Contact() {
           role="alert"
           aria-live="assertive"
         >
-          <p className="text-sm font-medium">
+          <p className="text-xs sm:text-sm font-medium">
             {submitStatus === "success"
               ? "Message sent successfully!"
               : "Failed to send. Please try again!"}

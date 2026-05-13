@@ -166,7 +166,7 @@ const skillCategories: SkillCategory[] = [
           My Skills
         </motion.h2>
         <motion.p
-          className="text-gray-500 dark:text-gray-300 text-center max-w-3xl mx-auto mb-8 sm:mb-12 font-['Inter'] text-sm sm:text-base md:text-lg"
+          className="text-gray-700 dark:text-gray-300 text-center max-w-3xl mx-auto mb-6 sm:mb-12 font-['Inter'] text-xs sm:text-base md:text-lg px-2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
@@ -177,7 +177,7 @@ const skillCategories: SkillCategory[] = [
 
         {/* Search Input */}
         <motion.div
-          className="flex justify-center mb-8 sm:mb-12"
+          className="flex justify-center mb-6 sm:mb-12 px-2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
@@ -187,13 +187,13 @@ const skillCategories: SkillCategory[] = [
             placeholder="Search skills..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full max-w-md bg-white/20 dark:bg-gray-800/20 backdrop-blur-md border-gray-300/50 dark:border-cyan-500/20 focus:ring-cyan-500 focus:border-cyan-500 text-sm sm:text-base"
+            className="w-full max-w-md bg-white/20 dark:bg-gray-800/20 backdrop-blur-md border-gray-300/50 dark:border-cyan-500/20 focus:ring-cyan-500 focus:border-cyan-500 text-xs sm:text-base px-3 sm:px-4 py-2 sm:py-2.5"
             aria-label="Search skills"
           />
         </motion.div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {filteredCategories.length > 0 ? (
             filteredCategories.map((category, index) => (
               <motion.div
@@ -216,13 +216,13 @@ const skillCategories: SkillCategory[] = [
                 // disabled={typeof window !== "undefined" && window.innerWidth < 640}
                 >
                   <Card
-                    className="h-full relative bg-white/20 dark:bg-gray-900/20 backdrop-blur-md border-gray-300/50 dark:border-cyan-500/20 shadow-md group-hover:shadow-lg group-hover:border-cyan-500/30 dark:group-hover:border-cyan-400/40 transition-all duration-300"
+                    className="h-full relative bg-white/20 dark:bg-gray-900/20 backdrop-blur-md border-gray-400/70 dark:border-cyan-500/20 shadow-md group-hover:shadow-lg group-hover:border-cyan-600/50 dark:group-hover:border-cyan-400/40 transition-all duration-300"
                     role="region"
                     aria-labelledby={`skill-category-${index}`}
                   >
-                    <CardContent className="p-4 sm:p-6 flex flex-col items-center text-center relative z-10">
+                    <CardContent className="p-3 sm:p-6 flex flex-col items-center text-center relative z-10">
                       <motion.div
-                        className="mb-3 sm:mb-4 p-3 sm:p-4 rounded-full bg-gradient-to-r from-cyan-500/20 to-purple-500/20 dark:from-cyan-500/30 dark:to-purple-500/30"
+                        className="mb-2 sm:mb-4 p-2 sm:p-4 rounded-full bg-gradient-to-r from-cyan-500/30 to-purple-500/30 dark:from-cyan-500/30 dark:to-purple-500/30"
                         animate={{ rotate: [0, 360] }}
                         transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
                       >
@@ -230,17 +230,17 @@ const skillCategories: SkillCategory[] = [
                       </motion.div>
                       <h3
                         id={`skill-category-${index}`}
-                        className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-800 dark:text-cyan-200 font-['Exo_2']"
+                        className="text-base sm:text-xl font-semibold mb-2 sm:mb-4 text-gray-800 dark:text-cyan-200 font-['Exo_2'] line-clamp-2"
                       >
                         {category.title}
                       </h3>
-                      <div className="flex flex-wrap justify-center gap-1 sm:gap-2 mb-3 sm:mb-4">
+                      <div className="flex flex-wrap justify-center gap-1 mb-2 sm:mb-4">
                         <TooltipProvider>
                           {category.skills.map((skill, skillIndex) => (
                             <Tooltip key={`${skill.name}-${skillIndex}`}>
                               <TooltipTrigger asChild>
                                 <Badge
-                                  className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-gray-100/50 dark:bg-gray-800/50 text-gray-800 dark:text-gray-200 font-['Inter'] rounded-md border-gray-300/50 dark:border-cyan-500/20 hover:bg-cyan-500/30 dark:hover:bg-cyan-500/40 transition-all duration-200 text-xs sm:text-sm cursor-pointer"
+                                  className="px-1 sm:px-2 py-0.5 text-gray-900 dark:text-gray-200 font-['Inter'] rounded-md border-gray-400 dark:border-cyan-500/20 bg-gray-200/80 dark:bg-gray-800/50 hover:bg-cyan-500/40 dark:hover:bg-cyan-500/40 transition-all duration-200 text-[10px] sm:text-xs cursor-pointer"
                                   role="button"
                                   tabIndex={0}
                                   onKeyDown={(e) => {
